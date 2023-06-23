@@ -9,8 +9,6 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <h1>Wondernest</h1>
-      
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
