@@ -1,11 +1,34 @@
 import styles from './page.module.css'
+import Link from 'next/link'
+import { compareDesc, format, parseISO } from 'date-fns'
+import { allPosts, Post } from 'contentlayer/generated'
 
 export default function Home() {
+  const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+
   return (
     <main className={styles.main}>
       <h1>Wondernest</h1>
-      <h2>Sixth time&apos;s the charm</h2>
-      <p>Welcome to latest iteration of my personal platform, Moonwith. This time built from scratch with Next.js 13 and the new app router.</p>
+      
+      {posts.map((post, idx) => (
+        <PostCard key={idx} {...post} />
+      ))}
     </main>
+  )
+}
+
+function PostCard(post) {
+  return (
+    <div className="mb-8">
+      <h2 className="mb-1 text-xl">
+        <Link href={post.url} className="text-blue-700 hover:text-blue-900 dark:text-blue-400">
+          {post.title}
+        </Link>
+      </h2>
+      <time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
+        {format(parseISO(post.date), 'LLLL d, yyyy')}
+      </time>
+      <div className="t" dangerouslySetInnerHTML={{ __html: post.body.html }} />
+    </div>
   )
 }
