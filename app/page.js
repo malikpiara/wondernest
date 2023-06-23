@@ -1,7 +1,8 @@
-import styles from './page.module.css'
-import Link from 'next/link'
-import { compareDesc, format, parseISO } from 'date-fns'
-import { allPosts, Post } from 'contentlayer/generated'
+import styles from './page.module.css';
+import Link from 'next/link';
+import { compareDesc, format, parseISO } from 'date-fns';
+import { allPosts, Post } from 'contentlayer/generated';
+import { useMDXComponent } from 'next-contentlayer/hooks';
 
 export default function Home() {
   const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
@@ -18,6 +19,9 @@ export default function Home() {
 }
 
 function PostCard(post) {
+  // Parse the MDX file via the useMDXComponent hook.
+  const MDXContent = useMDXComponent(post.body.code)
+
   return (
     <div className="mb-8">
       <h2 className="mb-1 text-xl">
@@ -25,10 +29,9 @@ function PostCard(post) {
           {post.title}
         </Link>
       </h2>
-      <time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
-        {format(parseISO(post.date), 'LLLL d, yyyy')}
-      </time>
-      <div className="t" dangerouslySetInnerHTML={{ __html: post.body.html }} />
+      
+      <MDXContent />
+     
     </div>
   )
 }
