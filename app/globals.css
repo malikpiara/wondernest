@@ -34,6 +34,16 @@ body {
   align-items:baseline;
 }
 
+p {
+  line-height: 1.5em;
+  margin-block-end: 1.5em;
+  font-size: 1.1em;
+}
+
+p a {
+  color: #bdb4fe;
+}
+
 a {
   color: inherit;
   text-decoration: none;
