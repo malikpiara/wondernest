@@ -36,6 +36,7 @@ const PostLayout = ({ params }) => {
         <h1 className="text-3xl font-bold">{post.title}</h1>
       </div>
       <MDXContent />
+      <aside className='comments-box'>Comments will be available soon.</aside>
     </article>
   );
 };

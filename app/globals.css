@@ -77,3 +77,18 @@ footer {
   align-self: center;
   text-transform: uppercase;
 }
+
+img {
+  width: 100%;
+}
+
+hr {
+  margin-bottom: 26px;
+  border: 0.8px solid #d6e1e7;
+}
+
+.comments-box {
+  background-color: #d6e1e7;
+  border-radius: 3px;
+  padding: 15px;
+}

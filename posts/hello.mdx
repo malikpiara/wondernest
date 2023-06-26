@@ -1,10 +1,47 @@
 ---
-title: Hello World (#6)
+title: I'm building my website for the sixth time
 date: 2023-06-23
 ---
 
-In order to be great at something, you have to do it a thousand times. This was the advice [Rasmus Andersson](https://moonwith.com/posts/rsms), an industry titan and personal hero gave me. With this advice in mind, I decided to rebuild my [personal platform](https://moonwith.com/) from scratch for the sixth time. Now, with knowledge I didn't have and technology that was not available two years ago.
+*This post is for people who built their personal website and assumes some familiarity with frontend technologies.*
 
-Since good software takes time to build, Wondernest is an experimental playground and a blog within a blog. **If you asked me for more content related with my personal experience on building, designing and improving products and enabling teams, this is for you.** Occasionaly, I'll share insights and highlights from my research on how social psychology can be applied in the development of technology.
+This week I started building [Moonwith](https://moonwith.com/) again from scratch. Now, with knowledge I didn't have two years ago.
 
-This site is already using [the new app router from Next.js](https://nextjs.org/docs/app), as well as [Contentlayer](https://www.contentlayer.dev/) and [MDX](https://mdxjs.com/) to serve the content. It will be fun to explore more ways of interacting with you and figuring out what a platform built in 2023 can be.
+Even though Moonwith looks like a blog, there's more under the hood. With time, I've been slowly building tools to increase my productivity. From a private URL shortener to a subscriber management system. Here's a screenshot of my dashboard:
+
+![Screenshot of FigJam file with Moonwith architecture ](/moonadmin2.png)
+*Screenshot of my private dashboard at Moonwith. I can check comments left in the blog, manage my newsletter subscribers and use keyboard shortcuts to access items faster.*
+
+## Why did I decide to build my website again?
+When I built the last version of Moonwith, I was transitioning from the Python world to Javascript. I wanted to port my project from [Flask](https://flask.palletsprojects.com/en/2.3.x/) and learn as much as I could about web development in the process. From state management, to how to manage and connect different frontend and backend projects, to how to work with infrastructure APIs.
+
+The end result was a Next.js frontend with blog posts stored as local markdown files, enhanced by a backend written in Express.js that enabled the comments and the blog post "likes". This backend was connected to a PostgresSQL and deployed on [Heroku](https://heroku.com/). Authentication and user management was powered by [Auth0](https://auth0.com/).
+
+You can see how everything connects below:
+
+![Screenshot of FigJam file with Moonwith architecture ](/moonwith.png)
+*Screenshot of FigJam file with Moonwith architecture.*
+
+Picking these technologies was aligned with my goal of challenging myself, gaining a deeper understanding of what software developers go through and becoming a better product manager. I learned a great deal in the process. But this combination was too complex and expensive. Building new functionality and making bigger changes to Moonwith was becoming a nightmare.
+
+I wanted to simplify the development of Moonwith, while making the website more performant and lowering the costs brought by Heroku. To do so, I picked [Supabase](https://supabase.com/), an open source alternative to Firebase that can handle both storage and authentication.
+
+First, I started refactoring my codebase but then I realised it would be wiser to start from scratch since there were so many things I would do differently with the knowledge I have today.
+
+ ## What changes in the new version of Moonwith?
+
+The frontend and backend are both powered by Next.js and deployed at [Vercel](https://vercel.com/). Storage and authentication are handled by Supabase. There are less systems to manage.
+
+I'm using [the new app router from Next.js](https://nextjs.org/docs/app) based on React server components. This is a new paradigm that can make web apps lighter and faster. I don't know enough to be able to explain it easily but [you can read more about it here](https://adhithiravi.medium.com/what-are-server-components-and-client-components-in-react-18-and-next-js-13-6f869c0c66b0).
+
+Since markdown is not read natively by Next.js, we have to spend time creating utility  functions and using libraries to read the file system and turn the markdown into HTML. Fortunately, now there's a tool called [Contentlayer](https://www.contentlayer.dev/) which can turn content into data for us. Using ContentLayer, I managed to build this blog in less than 1 day. Before, it took me around 1 week.
+
+Another limitation of markdown files was the fact we can't personalise the page of specific posts or easily add interactivity. [MDX](https://mdxjs.com/) allows you to use JSX in markdown documents. This means you can do virtually anything from embedding figma files to building custom poll components.
+
+It will be fun to explore ways of interacting with you and building a website powered by 2023 technology.
+
+---
+
+
+
+Since good software takes time to build, Wondernest is an experimental playground and a place where I'll blog about product development until this website has the functionality to replace Moonwith.
