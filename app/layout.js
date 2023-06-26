@@ -25,6 +25,7 @@ export default function RootLayout({ children }) {
         </header>
         
           {children}
+          <footer>Only You Know Who You Can Be</footer>
       </body>
     </html>
   )
