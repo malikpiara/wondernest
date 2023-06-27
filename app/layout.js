@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react';
 import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         
           {children}
           <footer>Only You Know Who You Can Be</footer>
+          <Analytics />
       </body>
     </html>
   )
