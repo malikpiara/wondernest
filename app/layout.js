@@ -2,6 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react';
 import Link from 'next/link'
+import LoadingPage from '../components/loadingPage';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+      <LoadingPage/>
         <header className='main-header'>
           <Link href="/">
           <div className='title'>
@@ -27,7 +29,10 @@ export default function RootLayout({ children }) {
         
           {children}
           <footer>Only You Know Who You Can Be</footer>
+
+          {/* The following tag enables web analytics at Vercel */}
           <Analytics />
+          
       </body>
     </html>
   )

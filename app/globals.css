@@ -87,6 +87,10 @@ hr {
   border: 0.8px solid #d6e1e7;
 }
 
+.quote {
+  font-weight: 400;
+}
+
 .comments-box {
   background-color: #d6e1e7;
   border-radius: 3px;
