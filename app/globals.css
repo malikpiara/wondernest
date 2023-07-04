@@ -89,6 +89,16 @@ hr {
 
 .quote {
   font-weight: 400;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    color: hsl(200, 18%, 0%);
+  }
+  100% {
+    color: hsl(200, 18%, 46%);
+  }
 }
 
 .comments-box {

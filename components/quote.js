@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 const quotes = [
-    '"The best confidence builder is experience."',
+    '"The best confidence builder is experience." — Star Wars: The Clone Wars',
     '“The curse of modernity is that we are increasingly populated by a class of people who are better at explaining than understanding, or better at explaining than doing. — Nassim Nicholas Taleb”',
     '“Those who talk should do and only those who do should talk.” — Nassim Nicholas Taleb',
     '“Any fool can criticize, complain, and condemn—and most fools do. But it takes character and self-control to be understanding and forgiving.” — Dale Carnegie',
