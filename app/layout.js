@@ -1,10 +1,13 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react';
+import * as amplitude from '@amplitude/analytics-browser';
 import Link from 'next/link'
 import LoadingPage from '../components/loadingPage';
 
 const inter = Inter({ subsets: ['latin'] })
+
+amplitude.init(process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY);
 
 export const metadata = {
   title: 'Wondernest',
