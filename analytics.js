@@ -7,4 +7,3 @@ export default function Amplitude() {
         amplitude.init(process.env.NEXT_PUBLIC_AMPLITUDE_API_KEY);
     }, []);
 }
-
