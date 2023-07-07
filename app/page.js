@@ -5,6 +5,7 @@ import { compareDesc, format, parseISO } from 'date-fns';
 import { allPosts, Post } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import Amplitude from '../analytics';
+import AuthForm from './auth-form'
 
 export default function Home() {
   const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
@@ -32,6 +33,20 @@ function PostCard(post) {
       </h2>
       
       <MDXContent />
+
+      <div className="row">
+      <div className="col-6">
+        <h1 className="header">Supabase Auth + Storage</h1>
+        <p className="">
+          Experience our Auth and Storage through a simple profile management example. Create a user
+          profile and upload an avatar image. Fast, simple, secure.
+        </p>
+      </div>
+      <div className="col-6 auth-widget">
+        <AuthForm />
+      </div>
+      
+    </div>
      
     </div>
   )
