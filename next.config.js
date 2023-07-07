@@ -1,6 +1,5 @@
+/** @type {import('next').NextConfig} */
 const { withContentlayer } = require('next-contentlayer')
-const withTM = require('next-transpile-modules')(['@effect-ts/otel', '@opentelemetry/sdk-trace-base']);
+const nextConfig = {}
 
-const nextConfig = {};
-
-module.exports = withTM(withContentlayer(nextConfig));
+module.exports = withContentlayer(nextConfig)
