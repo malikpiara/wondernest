@@ -11,10 +11,10 @@ export default function AuthForm() {
       supabaseClient={supabase}
       view="magic_link"
       appearance={{ theme: ThemeSupa }}
-      theme="dark"
+      theme="light"
       showLinks={false}
       providers={[]}
-      redirectTo="http://localhost:3000/auth/callback"
+      redirectTo="http://wondernest.moonwith.com/auth/callback"
     />
   )
 }
