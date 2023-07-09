@@ -5,6 +5,7 @@ import { compareDesc, format, parseISO } from 'date-fns';
 import { allPosts, Post } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import Amplitude from '../analytics';
+import AuthForm from './auth-form'
 
 export default function Home() {
   const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
@@ -32,7 +33,6 @@ function PostCard(post) {
       </h2>
       
       <MDXContent />
-     
     </div>
   )
 }
