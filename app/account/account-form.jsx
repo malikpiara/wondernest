@@ -99,10 +99,10 @@ export default function AccountForm({ session }) {
         />
       </div>
       <div className='form-item'>
-        <label htmlFor="website">Website</label>
+        <label htmlFor="website">About Me</label>
         <input
           id="website"
-          type="url"
+          type="text"
           value={website || ''}
           onChange={(e) => setWebsite(e.target.value)}
         />
