@@ -124,8 +124,8 @@ hr {
 /* Create component for Button and remove this css */
 button {
   width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
   padding-left: 1rem;
   padding-right: 1rem;
   background-color: #000000;
@@ -144,8 +144,8 @@ button:hover {
 input {
   border: 1px solid #e5e7eb;
   border-radius: 5px;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
