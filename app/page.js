@@ -33,20 +33,6 @@ function PostCard(post) {
       </h2>
       
       <MDXContent />
-
-      <div className="row">
-      <div className="col-6">
-        <h1 className="header">Sign in to Moonwith</h1>
-        <p className="">
-          Create a profile to join the breakfasts for good and to find other people that share your interests.
-        </p>
-      </div>
-      <div className="col-6 auth-widget">
-        <AuthForm />
-      </div>
-      
-    </div>
-     
     </div>
   )
 }
