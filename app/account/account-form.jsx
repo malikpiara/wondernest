@@ -75,11 +75,11 @@ export default function AccountForm({ session }) {
         updateProfile({ fullname, username, website, avatar_url: url })
       }}
     />
-      <div>
+      <div className='form-item'>
         <label htmlFor="email">Email</label>
         <input id="email" type="text" value={session?.user.email} disabled />
       </div>
-      <div>
+      <div className='form-item'>
         <label htmlFor="fullName">Full Name</label>
         <input
           id="fullName"
@@ -87,8 +87,9 @@ export default function AccountForm({ session }) {
           value={fullname || ''}
           onChange={(e) => setFullname(e.target.value)}
         />
+        <small>This is your public display name.</small>
       </div>
-      <div>
+      <div className='form-item'>
         <label htmlFor="username">Username</label>
         <input
           id="username"
@@ -97,7 +98,7 @@ export default function AccountForm({ session }) {
           onChange={(e) => setUsername(e.target.value)}
         />
       </div>
-      <div>
+      <div className='form-item'>
         <label htmlFor="website">Website</label>
         <input
           id="website"
@@ -116,7 +117,7 @@ export default function AccountForm({ session }) {
           {loading ? 'Loading ...' : 'Update'}
         </button>
       </div>
-
+      
       <div>
         <form action="/auth/signout" method="post">
           <button className="button block" type="submit">
