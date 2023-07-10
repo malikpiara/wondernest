@@ -130,7 +130,7 @@ button {
   padding-right: 1rem;
   background-color: #000000;
   color: white;
-  border-radius: 5px;
+  border-radius: 7px;
   cursor: pointer;
   font-weight: 500;
   font-family: inherit;
@@ -141,9 +141,9 @@ button:hover {
   background-color: hsla(240 5.9% 10% / 0.9);
 }
 
-input {
+input, .form-textarea {
   border: 1px solid #e5e7eb;
-  border-radius: 5px;
+  border-radius: 7px;
   padding-top: 0.9rem;
   padding-bottom: 0.9rem;
   padding-left: 0.75rem;
@@ -175,4 +175,8 @@ label {
 .form-item {
   display: flex;
   flex-direction: column;
+}
+
+.m0 {
+  margin: 0;
 }
