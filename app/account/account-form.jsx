@@ -113,10 +113,10 @@ export default function AccountForm({ session }) {
       </div>
 
       <h2>Earnest Questions</h2>
-      <p className='m0'>Let people know what you're currently exploring</p>
+      <p className='m0'>Let people know what you are currently exploring</p>
 
       <div className='form-item'>
-        <label htmlFor="currently_reading">What I'm reading right now...</label>
+        <label htmlFor="currently_reading">What I&apos;m reading right now...</label>
         <input
           id="currently_reading"
           type="text"
