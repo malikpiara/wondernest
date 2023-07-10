@@ -8,7 +8,8 @@ export default function AccountForm({ session }) {
   const [loading, setLoading] = useState(true)
   const [fullname, setFullname] = useState(null)
   const [username, setUsername] = useState(null)
-  const [website, setWebsite] = useState(null)
+  const [aboutme, setAboutme] = useState(null)
+  const [currently_reading, setCurrently_reading] = useState(null)
   const [avatar_url, setAvatarUrl] = useState(null)
   const user = session?.user
 
@@ -18,7 +19,7 @@ export default function AccountForm({ session }) {
 
       let { data, error, status } = await supabase
         .from('profiles')
-        .select(`full_name, username, website, avatar_url`)
+        .select(`full_name, username, aboutme, currently_reading, avatar_url`)
         .eq('id', user?.id)
         .single()
 
@@ -29,7 +30,8 @@ export default function AccountForm({ session }) {
       if (data) {
         setFullname(data.full_name)
         setUsername(data.username)
-        setWebsite(data.website)
+        setAboutme(data.aboutme)
+        setCurrently_reading(data.currently_reading)
         setAvatarUrl(data.avatar_url)
       }
     } catch (error) {
@@ -43,7 +45,7 @@ export default function AccountForm({ session }) {
     getProfile()
   }, [user, getProfile])
 
-  async function updateProfile({ username, website, avatar_url }) {
+  async function updateProfile({ username, aboutme, currently_reading, avatar_url }) {
     try {
       setLoading(true)
 
@@ -51,7 +53,8 @@ export default function AccountForm({ session }) {
         id: user?.id,
         full_name: fullname,
         username,
-        website,
+        aboutme,
+        currently_reading,
         avatar_url,
         updated_at: new Date().toISOString(),
       })
@@ -72,7 +75,7 @@ export default function AccountForm({ session }) {
       size={150}
       onUpload={(url) => {
         setAvatarUrl(url)
-        updateProfile({ fullname, username, website, avatar_url: url })
+        updateProfile({ fullname, username, aboutme, currently_reading, avatar_url: url })
       }}
     />
       <div className='form-item'>
@@ -99,19 +102,33 @@ export default function AccountForm({ session }) {
         />
       </div>
       <div className='form-item'>
-        <label htmlFor="website">About Me</label>
-        <input
-          id="website"
+        <label htmlFor="aboutme">About Me</label>
+        <textarea
+          id="aboutme"
+          className='form-textarea'
           type="text"
-          value={website || ''}
-          onChange={(e) => setWebsite(e.target.value)}
+          value={aboutme || ''}
+          onChange={(e) => setAboutme(e.target.value)}
+        />
+      </div>
+
+      <h2>Earnest Questions</h2>
+      <p className='m0'>Let people know what you're currently exploring</p>
+
+      <div className='form-item'>
+        <label htmlFor="currently_reading">What I'm reading right now...</label>
+        <input
+          id="currently_reading"
+          type="text"
+          value={currently_reading || ''}
+          onChange={(e) => setCurrently_reading(e.target.value)}
         />
       </div>
 
       <div>
         <button
           className="button primary block"
-          onClick={() => updateProfile({ fullname, username, website, avatar_url })}
+          onClick={() => updateProfile({ fullname, username, aboutme, avatar_url })}
           disabled={loading}
         >
           {loading ? 'Loading ...' : 'Update'}
