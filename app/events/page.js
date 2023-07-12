@@ -40,7 +40,7 @@ function LoginCard() {
         </p>
 
         <p>
-            If you're new in Berlin or would like to leave your bubble and meet people who are driven and open minded, join us this Sunday.
+            If you&apos;re new in Berlin or would like to leave your bubble and meet people who are driven and open minded, join us this Sunday.
         </p>
 
         <p>
@@ -48,7 +48,7 @@ function LoginCard() {
         </p>
 
         <p>
-        Our community is made of people who want to help improve society with everything they do. And to increase our impact, we're committing a fee of 5€ per person to help innocent children, civilians and the soldiers get health supplies that are hard to come by amidst the war. The money is donated in its entirety to <a href="https://www.suppliesforukraine.com/">Supplies for Ukraine</a>.
+        Our community is made of people who want to help improve society with everything they do. And to increase our impact, we&apos;re committing a fee of 5€ per person to help innocent children, civilians and the soldiers get health supplies that are hard to come by amidst the war. The money is donated in its entirety to <a href="https://www.suppliesforukraine.com/">Supplies for Ukraine</a>.
         </p>
       </div>
       
