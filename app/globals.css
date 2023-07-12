@@ -210,7 +210,13 @@ label {
 }
 
 .time-location-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 20px
+}
+
+@media (max-width: 600px) {
+  .mobile-flex-column {
+    grid-template-columns: 1fr;
+  }
 }
