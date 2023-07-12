@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
           </div>
           </Link>
           <div className='subtitle'>
-            <p>A blog on product development and social psychology.</p>
+            <p>Malik's personal platform.</p>
           </div>
         </header>
         
