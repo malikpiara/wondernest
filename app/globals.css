@@ -180,3 +180,37 @@ label {
 .m0 {
   margin: 0;
 }
+
+.content-card {
+  border: 1px solid #d6e1e7;
+  border-radius: 7px;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.content-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-weight: 500;
+  color: #000000;
+}
+
+.time-location-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
