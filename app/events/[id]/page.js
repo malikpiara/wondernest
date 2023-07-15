@@ -29,6 +29,19 @@ export default async function Breakfast({ params }) {
 }
 
 function EventDetails({ event }) {
+    const timestamp = event.starting_time;
+    
+    // Convert the timestamp to a JavaScript Date object
+    const date = new Date(timestamp);
+
+    // Convert the date to a more readable format
+    const optionsDate = { weekday: 'long', day: 'numeric', month: 'long' };
+    const optionsTime = { hour: 'numeric', minute: 'numeric', hour12: true };
+
+    // Format the date
+    const formattedDate = date.toLocaleDateString('en-US', optionsDate);
+    const formattedTime = date.toLocaleTimeString('en-US', optionsTime);
+
     return (
         <div className="content-cards-wrapper">
       <div className="content-card">
@@ -39,8 +52,8 @@ function EventDetails({ event }) {
         
             <div className="time-location-container mobile-flex-column">
                 <div className="time-container">
-                <div className="title">Sunday, 16 July</div>
-                <div>Starts at 10:30am</div>
+                <div className="title">{formattedDate}</div>
+                <div>Starts at {formattedTime.toLowerCase()}</div>
                 </div>
                 <div className="location-container">
                     <div className="title">Five Elephant Kreuzberg</div>
@@ -70,53 +83,4 @@ function EventDetails({ event }) {
       
     </div>
     )
-}
-
-function EventsData() {
-    const events = [
-        {
-        id: "1",
-        title: "Breakfasts for Good: Meta, Threads and Twitter",
-        host: "Malik",
-        description:
-        <>
-            <p>Every Sunday, Malik organises a breakfast to get people from different backgrounds and who value human connection to meet and talk about the impact of technology on society and everything around it. — You don&apos;t have to be an expert to join.
-        </p>
-
-        <p>
-            If you&apos;re new in Berlin or would like to leave your bubble and meet people who are driven and open minded, join us this Sunday.
-        </p>
-
-        <p>
-        To create a safe space for vulnerability and more intimate conversations, there are only 6 seats available. Malik personally handpicks people from the waiting list so you can leave the breakfast with a warm and fuzzy feeling.
-        </p>
-
-        <p>
-        Our community is made of people who care about improving society with their work. And to increase our impact, we&apos;re committing a fee of 5€ per person to help innocent children, civilians and the soldiers get health supplies that are hard to come by amidst the war. The money is donated in its entirety to <a href="https://www.suppliesforukraine.com/">Supplies for Ukraine</a>.
-        </p>
-        </>
-    },
-    {
-        id: "2",
-        title: "Breakfasts for Good: Fashion",
-        host: "John",
-        description:
-        <>
-            <p>Every Sunday, Malik organises a breakfast to get people from different backgrounds and who value human connection to meet and talk about the impact of technology on society and everything around it. — You don&apos;t have to be an expert to join.
-        </p>
-
-        <p>
-            If you&apos;re new in Berlin or would like to leave your bubble and meet people who are driven and open minded, join us this Sunday.
-        </p>
-
-        <p>
-        To create a safe space for vulnerability and more intimate conversations, there are only 6 seats available. Malik personally handpicks people from the waiting list so you can leave the breakfast with a warm and fuzzy feeling.
-        </p>
-
-        <p>
-        Our community is made of people who care about improving society with their work. And to increase our impact, we&apos;re committing a fee of 5€ per person to help innocent children, civilians and the soldiers get health supplies that are hard to come by amidst the war. The money is donated in its entirety to <a href="https://www.suppliesforukraine.com/">Supplies for Ukraine</a>.
-        </p>
-        </>
-    }];
-    return events
 }
