@@ -36,7 +36,7 @@ function EventDetails({ event }) {
 
     // Convert the date to a more readable format
     const optionsDate = { weekday: 'long', day: 'numeric', month: 'long' };
-    const optionsTime = { hour: 'numeric', minute: 'numeric', hour12: true };
+    const optionsTime = { hour: '2-digit', minute:'2-digit' };
 
     // Format the date
     const formattedDate = date.toLocaleDateString('en-US', optionsDate);
