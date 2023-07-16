@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Wondernest',
-  description: 'Moonwith v6',
+  description: 'A blog and event app by Malik',
 }
 
 export default function RootLayout({ children }) {
