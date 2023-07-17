@@ -25,9 +25,9 @@ export default function RootLayout({ children }) {
             <h1>wondernest</h1>
           </div>
           </Link>
-          <div className='subtitle'>
+          {/* <div className='subtitle'>
             <p>Malik&apos;s personal platform.</p>
-          </div>
+          </div> */}
         </header>
         
           {children}
