@@ -1,30 +1,41 @@
-import { notFound } from "next/navigation";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
+'use client';
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Amplitude from "../../../analytics";
 import Button from "../../../components/button";
+import { useEffect, useState } from "react";
 
-const supabase = createServerComponentClient({ cookies });
-const isBrowser = typeof window !== "undefined";
+export default function Events({ params }) {
+  const [event, setEvent] = useState(null)
+  const supabase = createClientComponentClient();
 
-export default async function Breakfast({ params }) {
-    const { data: event } = await supabase
-    .from("events")
-    .select()
-    .match({ id: params.id })
-    .limit(1)
-    .single()
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const { data } = await supabase
+          .from("events")
+          .select()
+          .match({ id: params.id })
+          .limit(1)
+          .single()
+            setEvent(data)
+    } catch (error) {
+        console.error("Failed to get event data:", error);
+  }
+};
+    getData()
+  }, [params, supabase])
+
+  Amplitude()
 
     // Show loading state
-    if (!event) return <div>Loading...</div>
+    //if (!data) return <div>Loading...</div>
 
     // 404 if the event id in the url bar does not exist.
-    if (!event) notFound();
+    //if (!data) notFound();
     
     return (
         <>
-        {isBrowser && Amplitude()}
-        <EventDetails event={event}/>
+        {event && <EventDetails event={event}/>}
         </>
     )
 }
