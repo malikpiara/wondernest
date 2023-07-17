@@ -12,9 +12,8 @@ export const metadata = {
   description: 'A blog and event app by Malik',
 }
 
-const isBrowser = typeof window !== "undefined";
-
 export default function RootLayout({ children }) {
+  const isBrowser = typeof window !== "undefined";
   isBrowser && Amplitude()
   return (
     <html lang="en">
@@ -26,9 +25,9 @@ export default function RootLayout({ children }) {
             <h1>wondernest</h1>
           </div>
           </Link>
-          <div className='subtitle'>
+          {/* <div className='subtitle'>
             <p>Malik&apos;s personal platform.</p>
-          </div>
+          </div> */}
         </header>
         
           {children}

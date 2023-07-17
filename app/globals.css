@@ -22,6 +22,7 @@ body {
   max-width: var(--max-width);
   margin: auto;
   overflow-x: hidden;
+  background-color: #fbf9f1;
 }
 
 body {
@@ -182,12 +183,13 @@ label {
 }
 
 .content-card {
+  background-color: #ffffff;
   box-shadow: 0 1px 4px rgba(0,0,0,.1);
   border-radius: 8px;
   padding-top: 1.5rem;
   padding-bottom: 2.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
 }
 
 .flex {
