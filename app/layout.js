@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react';
 import Link from 'next/link'
 import LoadingPage from '../components/loadingPage';
+import Amplitude from '../analytics';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,8 +12,10 @@ export const metadata = {
   description: 'A blog and event app by Malik',
 }
 
+const isBrowser = typeof window !== "undefined";
+
 export default function RootLayout({ children }) {
-  
+  isBrowser && Amplitude()
   return (
     <html lang="en">
       <body className={inter.className}>

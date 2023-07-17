@@ -1,13 +1,11 @@
 import { notFound } from "next/navigation";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
+import Button from "../../../components/button";
 
 const supabase = createServerComponentClient({ cookies });
 
 export default async function Breakfast({ params }) {
-    //const events = EventsData();
-    //const event = events.find((event) => event.id === params.id);
-
     const { data: event } = await supabase
     .from("events")
     .select()
@@ -35,8 +33,8 @@ function EventDetails({ event }) {
     const date = new Date(timestamp);
 
     // Convert the date to a more readable format
-    const optionsDate = { weekday: 'long', day: 'numeric', month: 'long' };
-    const optionsTime = { hour: '2-digit', minute:'2-digit' };
+    const optionsDate = { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'Europe/Berlin' };
+    const optionsTime = { hour: '2-digit', minute:'2-digit', timeZone: 'Europe/Berlin' };
 
     // Format the date
     const formattedDate = date.toLocaleDateString('en-US', optionsDate);
@@ -71,8 +69,8 @@ function EventDetails({ event }) {
       <div className="content-card">
         <h3>Join the Event</h3>
         <p>Hi! To join the event, please register below. The button will take you to our community channel on Telegram.</p>
-        <form action="https://piara.li/breakfast">
-        <button>Let&apos;s Go</button>
+        <form id="event-signup" action="https://piara.li/breakfast">
+        <Button/>
         </form>
       </div>
 
