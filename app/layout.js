@@ -12,9 +12,8 @@ export const metadata = {
   description: 'A blog and event app by Malik',
 }
 
-const isBrowser = typeof window !== "undefined";
-
 export default function RootLayout({ children }) {
+  const isBrowser = typeof window !== "undefined";
   isBrowser && Amplitude()
   return (
     <html lang="en">

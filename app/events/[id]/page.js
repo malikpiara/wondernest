@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
+import Amplitude from "../../../analytics";
 import Button from "../../../components/button";
 
 const supabase = createServerComponentClient({ cookies });
+const isBrowser = typeof window !== "undefined";
 
 export default async function Breakfast({ params }) {
     const { data: event } = await supabase
@@ -21,6 +23,7 @@ export default async function Breakfast({ params }) {
     
     return (
         <>
+        {isBrowser && Amplitude()}
         <EventDetails event={event}/>
         </>
     )
@@ -69,7 +72,7 @@ function EventDetails({ event }) {
       <div className="content-card">
         <h3>Join the Event</h3>
         <p>Hi! To join the event, please register below. The button will take you to our community channel on Telegram.</p>
-        <form id="event-signup" action="https://piara.li/breakfast">
+        <form id="event-signup" action="https://t.me/+a5_2AAMyFxk1ZTlk">
         <Button/>
         </form>
       </div>
