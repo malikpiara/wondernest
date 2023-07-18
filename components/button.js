@@ -6,6 +6,7 @@ export default function Button() {
         amplitude.track("Button Clicked", {
           text: "Each click is a new event. In this case, people are clicking",
         })
+        location.href = 'https://t.me/+9rRY-pYLFDVlNjI0';
       }
     return (
         <button

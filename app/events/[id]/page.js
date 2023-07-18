@@ -82,10 +82,8 @@ function EventDetails({ event }) {
 
       <div className="content-card">
         <h3>Join the Event</h3>
-        <p>Hi! To join the event, please register below. The button will take you to our community channel on Telegram.</p>
-        <form id="event-signup" action="https://t.me/+a5_2AAMyFxk1ZTlk">
+        <p>Hi! To join the event, please register below. The button will take you to our community channel on Telegram.</p>     
         <Button/>
-        </form>
       </div>
 
       <div className="content-card">
