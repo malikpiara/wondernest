@@ -1,0 +1,13 @@
+Here are my personal principles on product development inspired by the [agile manifesto originally published in 2001](https://agilemanifesto.org/):
+
+1. Prioritise shared understanding over frameworks and processes.
+2. Make the work you're doing as visual as possible. Sketch, use post-it notes, take photos, record videos.
+3. Everything that is not a fact or hasn't been tested is an assumption or an opinion.
+4. First build to learn and to reduce risk. Then commit.
+5. Our ability to adapt is more important than following a plan.
+6. Build with outcomes in mind instead of features.
+7. The less you build, the better.
+8. Don't make estimations. Scope and shape improvements based on how much time it makes sense to invest and build from there.
+9. Don't compromise on quality. Compromise on the scope.
+10. Make fulfilled outcomes the primary measure of progress.
+11. Never set goals for your teams. Work alongside them to help them define their own goals, in a way that is aligned with yours.
