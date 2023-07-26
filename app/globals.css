@@ -170,6 +170,10 @@ label {
   border-radius: 50%;
 }
 
+.avatar2 {
+  border-radius: 8px;
+}
+
 .form-widget {
   display: flex;
   flex-direction: column;
@@ -194,6 +198,18 @@ label {
   padding-bottom: 2.5rem;
   padding-left: 1.3rem;
   padding-right: 1.3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.people-card {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.col-gap-20 {
+  gap: 20px;
 }
 
 .flex {
