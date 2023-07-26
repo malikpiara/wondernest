@@ -100,9 +100,21 @@ export default function AccountForm({ session }) {
           value={username || ''}
           onChange={(e) => setUsername(e.target.value)}
         />
+        <small>This affects your profile URL.</small>
+      </div>
+      <div className='form-item'>
+        <label htmlFor="username">Telegram Account</label>
+        <input
+          id="username"
+          type="text"
+          value={username || ''}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <small>We need this to get in touch with you.</small>
       </div>
       <div className='form-item'>
         <label htmlFor="aboutme">About Me</label>
+        <small>What makes you happy?.</small>
         <textarea
           id="aboutme"
           className='form-textarea'

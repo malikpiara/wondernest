@@ -3,6 +3,7 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Amplitude from "../../../analytics";
 import Button from "../../../components/button";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Events({ params }) {
   const [event, setEvent] = useState(null)
@@ -68,8 +69,8 @@ function EventDetails({ event }) {
                 <div>Starts at {formattedTime.toLowerCase()}</div>
                 </div>
                 <div className="location-container">
-                    <div className="title">Five Elephant Kreuzberg</div>
-                    <div>Berlin, Germany</div>
+                    <div className="title">{event.location}</div>
+                    <div>{event.city}</div>
                 </div>
                     <div>
                     <div className="title">Capacity</div>
@@ -84,6 +85,25 @@ function EventDetails({ event }) {
         <h3>Join the Event</h3>
         <p>Hi! To join the event, please register below. The button will take you to our community channel on Telegram.</p>     
         <Button/>
+      </div>
+
+      <div className="content-card col-gap-20">
+      <h3>About the participants</h3>
+        <div className="people-card">
+        <Image
+          width={170}
+          height={170}
+          src={"/malik.jpeg"}
+          alt="Malik"
+          className="avatar2 image"
+          style={{ height: 170, width: 170 }}
+        />
+        <div>
+        <h3>What are you currently reading and why?</h3>
+        <p>I believe our ability to deal with people is our most important asset. Reading &quot;How to Win Friends and Influence People&quot; by Dale Carnegie for the 20th time because it reminds me of important principles I already know but hardly ever put in practice.</p>
+        </div>
+        
+        </div>
       </div>
 
       <div className="content-card">
