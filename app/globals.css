@@ -245,4 +245,7 @@ label {
   .mobile-flex-column {
     grid-template-columns: 1fr;
   }
+  .col-mobile {
+    flex-direction: column;
+  }
 }

@@ -89,7 +89,7 @@ function EventDetails({ event }) {
 
       <div className="content-card col-gap-20">
       <h3>About the participants</h3>
-        <div className="people-card">
+        <div className="people-card col-mobile">
         <Image
           width={170}
           height={170}
