@@ -114,11 +114,11 @@ export default function AccountForm({ session }) {
       </div>
       <div className='form-item'>
         <label htmlFor="aboutme">About Me</label>
-        <small>What makes you happy?.</small>
         <textarea
           id="aboutme"
           className='form-textarea'
           type="text"
+          placeholder='What are some things you enjoy doing?'
           value={aboutme || ''}
           onChange={(e) => setAboutme(e.target.value)}
         />
