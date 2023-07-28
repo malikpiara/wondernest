@@ -162,6 +162,10 @@ label {
   margin-bottom: 3px;
 }
 
+.avatar.no-image {
+  background-color: #e5e7eb;
+}
+
 .avatar {
   border-radius: 50%;
 }

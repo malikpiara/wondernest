@@ -10,6 +10,9 @@ export default function Avatar({ uid, url, size, onUpload }) {
 
   useEffect(() => {
     async function downloadImage(path) {
+      if (path.startsWith('http')) {
+        setAvatarUrl(path)
+      }
       try {
         const { data, error } = await supabase.storage.from('avatars').download(path)
         if (error) {
