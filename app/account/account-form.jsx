@@ -9,7 +9,7 @@ export default function AccountForm({ session }) {
   const [fullname, setFullname] = useState(null)
   const [username, setUsername] = useState(null)
   const [aboutme, setAboutme] = useState(null)
-  const [currently_reading, setCurrently_reading] = useState(null)
+  const [currentlyReading, setCurrentlyReading] = useState(null)
   const [avatar_url, setAvatarUrl] = useState(null)
   const user = session?.user
 
@@ -31,7 +31,7 @@ export default function AccountForm({ session }) {
         setFullname(data.full_name)
         setUsername(data.username)
         setAboutme(data.aboutme)
-        setCurrently_reading(data.currently_reading)
+        setCurrentlyReading(data.currently_reading)
         setAvatarUrl(data.avatar_url)
       }
     } catch (error) {
@@ -54,7 +54,7 @@ export default function AccountForm({ session }) {
         full_name: fullname,
         username,
         aboutme,
-        currently_reading,
+        currently_reading: currentlyReading,
         avatar_url,
         updated_at: new Date().toISOString(),
       })
@@ -75,7 +75,7 @@ export default function AccountForm({ session }) {
       size={150}
       onUpload={(url) => {
         setAvatarUrl(url)
-        updateProfile({ fullname, username, aboutme, currently_reading, avatar_url: url })
+        updateProfile({ fullname, username, aboutme, currentlyReading, avatar_url: url })
       }}
     />
       <div className='form-item'>
@@ -132,15 +132,15 @@ export default function AccountForm({ session }) {
         <input
           id="currently_reading"
           type="text"
-          value={currently_reading || ''}
-          onChange={(e) => setCurrently_reading(e.target.value)}
+          value={currentlyReading || ''}
+          onChange={(e) => setCurrentlyReading(e.target.value)}
         />
       </div>
 
       <div>
         <button
           className="button primary block"
-          onClick={() => updateProfile({ fullname, username, aboutme, avatar_url })}
+          onClick={() => updateProfile({ fullname, username, aboutme, currentlyReading, avatar_url })}
           disabled={loading}
         >
           {loading ? 'Loading ...' : 'Update'}
