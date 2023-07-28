@@ -9,7 +9,7 @@ export default function AuthForm() {
   return (
     <Auth
       supabaseClient={supabase}
-      view="sign_up"
+      view="magic_link"
       appearance={{ theme: ThemeSupa,
         variables: {
           default: {
@@ -37,7 +37,7 @@ export default function AuthForm() {
             },
           },
         }, }}
-      showLinks={true}
+      showLinks={false}
       providers={['google']}
       redirectTo="http://wondernest.moonwith.com/auth/callback"
     />
